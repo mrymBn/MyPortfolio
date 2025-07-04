@@ -1,61 +1,55 @@
-export default function Skills() {
-  const skillCategories = [
-    {
-      category: "Frontend",
-      skills: ["HTML5", "CSS3", "JavaScript", "React", "Tailwind CSS", "Next.js"]
-    },
-    {
-      category: "Backend",
-      skills: ["Node.js", "Express", "Firebase"]
-    },
-    {
-      category: "Tools",
-      skills: ["Git", "GitHub", "VS Code", "Figma", "Postman"]
-    }
-  ];
+import { motion } from "framer-motion";
 
+const skills = [
+  { name: "React", level: 90, color: "bg-blue-500" },
+  { name: "TypeScript", level: 85, color: "bg-indigo-500" },
+  { name: "JavaScript", level: 95, color: "bg-yellow-500" },
+  { name: "Tailwind CSS", level: 90, color: "bg-cyan-500" },
+  { name: "Node.js", level: 80, color: "bg-green-500" },
+  { name: "UI/UX Design", level: 75, color: "bg-purple-500" }
+];
+
+export default function Skills() {
   return (
-    <section className="py-20 bg-white px-6 min-h-screen">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold mb-4 text-center">My Skills</h2>
-        <p className="text-lg text-gray-600 mb-12 text-center max-w-2xl mx-auto">
-          I've worked with a variety of technologies in the web development world.
-        </p>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          {skillCategories.map((category, index) => (
-            <div key={index} className="bg-gray-50 rounded-xl p-6 shadow-sm">
-              <h3 className="text-xl font-bold mb-6 text-center text-blue-600">
-                {category.category}
-              </h3>
-              <div className="flex flex-wrap justify-center gap-3">
-                {category.skills.map((skill, i) => (
-                  <span 
-                    key={i}
-                    className="bg-white px-4 py-2 rounded-full shadow text-sm font-medium border border-gray-200 hover:border-blue-300 hover:text-blue-600 transition-all"
-                  >
-                    {skill}
-                  </span>
-                ))}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="min-h-screen bg-gradient-to-br from-gray-50 to-white px-6 md:px-12 py-24"
+    >
+      <div className="max-w-4xl mx-auto">
+        <motion.h1
+          initial={{ x: -20 }}
+          animate={{ x: 0 }}
+          className="text-3xl md:text-4xl font-bold mb-12 text-gray-800"
+        >
+          My Skills
+        </motion.h1>
+
+        <div className="space-y-8">
+          {skills.map((skill, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <div className="flex justify-between mb-2">
+                <span className="font-medium text-gray-700">{skill.name}</span>
+                <span className="text-gray-500">{skill.level}%</span>
               </div>
-            </div>
+              <div className="w-full bg-gray-200 rounded-full h-2.5">
+                <motion.div
+                  className={`${skill.color} h-2.5 rounded-full`}
+                  initial={{ width: 0 }}
+                  animate={{ width: `${skill.level}%` }}
+                  transition={{ delay: index * 0.1 + 0.3, duration: 0.8 }}
+                />
+              </div>
+            </motion.div>
           ))}
         </div>
-        
-        <div className="mt-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-8 text-white">
-          <h3 className="text-2xl font-bold mb-4">Continuous Learning</h3>
-          <p className="mb-6 opacity-90">
-            I'm committed to staying updated with the latest web technologies and best practices. 
-            Currently learning about advanced React patterns and performance optimization.
-          </p>
-          <div className="flex items-center gap-2">
-            <div className="w-full bg-white/20 rounded-full h-2.5">
-              <div className="bg-white h-2.5 rounded-full" style={{width: '75%'}}></div>
-            </div>
-            <span className="text-sm">React Mastery: 75%</span>
-          </div>
-        </div>
       </div>
-    </section>
+    </motion.div>
   );
 }
