@@ -8,7 +8,7 @@ export default function Projects() {
 It allows parents to track their child’s progress in a simple and accessible way.`,
       tech: ["React", "Node.js", "Tailwind CSS", "MongoDB"],
       githubLink: "https://github.com/mrymBn/MobiDical",
-      demoLink: "#",
+      // demoLink: "#",
     },
     {
       title: "Personal Portfolio",
@@ -16,21 +16,20 @@ It allows parents to track their child’s progress in a simple and accessible w
         "A responsive portfolio website showcasing my skills and projects with modern design principles.",
       tech: ["React", "Tailwind CSS", "Vercel"],
       githubLink: "https://github.com/mrymBn/MyPortfolio",
-      demoLink: "#",
+      // demoLink: "#",
     },
     {
       title: "Habit tracker App",
       description:
         "A cross-platform habit tracking app built with Flutter, featuring clean interfaces to help users build better routines through daily check-ins, progress visualization, and smart reminders.",
       tech: ["Flutter", "Dart", "Firebase"],
-      githubLink: "https://github.com/yourusername/portfolio",
-      demoLink: "#",
+      githubLink: "",//lost the code of this project
+      // demoLink: "#",
     },
   ];
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white px-4 py-20 relative overflow-hidden">
-      {/* Particle background */}
       <div className="absolute inset-0 overflow-hidden opacity-20">
         {[...Array(15)].map((_, i) => (
           <div
@@ -101,12 +100,12 @@ It allows parents to track their child’s progress in a simple and accessible w
                     </svg>
                     Code
                   </a>
-                  <a
+                  {/* <a
                     href={project.demoLink}
                     className="bg-white text-gray-900 hover:bg-gray-100 px-4 py-2 rounded-lg font-medium transition-colors"
                   >
                     Live Demo
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </motion.div>

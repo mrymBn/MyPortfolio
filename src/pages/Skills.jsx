@@ -2,11 +2,11 @@ export default function Skills() {
   const skillCategories = [
     {
       category: "Frontend",
-      skills: ["HTML5", "CSS3", "JavaScript", "React", "Tailwind CSS", "Next.js"]
+      skills: [ "JavaScript", "React","Flutter","Dart" ,"Tailwind CSS", "Next.js"]
     },
     {
       category: "Backend",
-      skills: ["Node.js", "Express", "Firebase"]
+      skills: ["Node.js", "Express","Java", "MongoDB","MySQL","Firebase"]
     },
     {
       category: "Tools",
@@ -39,7 +39,7 @@ export default function Skills() {
           My Skills
         </h1>
         <p className="text-lg text-blue-200 mb-12 text-center max-w-2xl mx-auto">
-          Technologies I work with regularly.
+          Tools and technologies I use to build modern and user-friendly web & mobile applications.
         </p>
         
         <div className="grid md:grid-cols-3 gap-8">
@@ -62,7 +62,7 @@ export default function Skills() {
           ))}
         </div>
         
-        <div className="mt-16 bg-gray-800 rounded-xl p-8 border border-gray-700">
+        {/* <div className="mt-16 bg-gray-800 rounded-xl p-8 border border-gray-700">
           <h3 className="text-2xl font-bold mb-4 text-blue-200">Continuous Learning</h3>
           <p className="mb-6 text-gray-300">
             Currently learning about advanced React patterns and performance optimization.
@@ -73,7 +73,7 @@ export default function Skills() {
             </div>
             <span className="text-sm text-gray-300">React Mastery: 75%</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
